@@ -1,0 +1,111 @@
+*Access keywords are added with classes or any blocks or definitions that change their meaning* 
+
+*For example if there is a bank software is created in java then, the name of bank should be public so that every can access it's name from any where in program*
+
+* So, what we do just add public keyword with that variable and make that public so that every one can access it's name*
+
+*Let's discuss about Access Modifiers in Java in detail below*
+
+
+**Types of Access Modifiers in Java**
+
+*Now there are variety of access modifiers in java but, we categorize them into two types that are as follow*
+
+1) Access Control Modifiers
+
+2) Non Access Modifiers
+
+
+1) Access Control Modifiers:
+
+*Now there are four types of access control modifiers, that we can use to control the access*
+
+These are as follow:
+
+A) public
+
+B) private
+
+C) protected
+
+D) default
+
+
+
+A) public
+
+*public is a keyword that helps to control the access of class, method or any other member*
+
+*Now if any entity is declared as public than we can access that any where*
+
+*It is now public. It is visible to the real world. You can also say that there in no privacy*
+
+public class Test
+{   //public class
+	public String var = "Hello World";   //public variable
+
+	public void helloWorld()
+	{    // public method
+     	System.out.println(var);
+   	}
+}
+
+
+B) private
+
+*private is a keyword that we use to declare any entity as private*
+
+*Now any entity declared as private cannot be access from any where*
+
+*It is totally hide from the real world. For example pin of account is totally private. It is used to make our entity secure*
+
+public class Test
+{   	//Outer class can not be private
+	private String var = "Hello World"; //private variable
+      
+      	private void helloWorld()
+	{ 	// private method
+      		System.out.println(var);
+      }
+ }
+
+
+C) protected
+
+*protected keyword help us to declare any entity as protected*
+
+*Now any entity declared as protected can be access with in a package*
+
+*As well as we can also access the child class through inheritance*
+
+public class Test
+{  	//Outer class cannot be protected     
+    	protected String var = "Hello World"; //protected variable      
+    	protected void helloWorld()
+	{ 	// protected method
+         	System.out.println(var);
+     	}
+}
+
+
+D) default
+
+*There in no keyword for default access modifiers* 
+
+*If we write nothing than it is considered as default access modifier*
+
+*Now any entity declared as default can only be access with in a package*
+
+
+
+2) Non Access Modifiers
+
+*There are bunch of non access modifiers in java that we can also use* 
+
+So let's discuss about them in more detail below:
+
+I) First of all we have "static modifier". That we mostly use with class or methods.
+
+II) Then we have "final modifier" that we can use to make our variables or class or methods finalize.
+
+III) The "abstract modifier" that we us to make our class or methods abstract.
