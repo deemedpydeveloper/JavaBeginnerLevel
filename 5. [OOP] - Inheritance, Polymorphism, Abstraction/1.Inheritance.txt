@@ -1,0 +1,555 @@
+Inheritance in Java is one of the important concepts. I hope that you know about the four pillars of Object Oriented Programming that are Encapsulation, Abstraction, Polymorphism and at the last Inheritance. All pillars are very important but Inheritance is at top. Because it provides a lot of flexibility.
+
+Inheritance in nothing just a concept that helps us to inherit features of the class. So, today in this article I am going to teach about Inheritance in Java with Example programs. Let’s discuss it in more detail with the help of some examples below.
+
+
+
+Overview
+First of all, what is Inheritance? Inheritance in a process a class get some features or properties like data members or member functions from another class. Simple is that. One class shares its features or its members with the other class. So that the programmers don’t need to write a piece of code again and again in the program.
+
+You can also add your own methods in the class that has features of the other class. Inheritance basically represents a parent-child or superclass-subclass relationship. Let’s discuss it with the help of an example so that you have a better understanding of it.
+
+For example, We know that there are many types of cars like sports cars, racing cars, and much more like that. But the main thing that every type of car has the same features in it. Like brake, accelerator, gear and much more.
+
+So rather than writing code, again and again, you can put that features in a separate class and the other class can use that class features and in this way we are reusing the code, we don’t need to write a piece of code again and again in each class. You can refer the below image to have a better understanding:
+
+Inheritance in Java
+Important Terms in this concept
+Class
+
+A class is a group of objects with the same properties. It is a blueprint or a template for the objects that are created.
+
+Parent Class / Super Class
+
+The parent class is also known as Base class. This is a class from where a subclass or child class inherits. For example, Car is parent class and Sportscar is child class.
+
+Child Class / Sub Class
+
+The child class is also known as an extended class. This is the class which gains features from other class or it gains features from its parent class. For example, Sports car gain his features like an accelerator, brake, and gear from its parent class that is Car.
+
+How we achieve Inheritance in Java?
+We have achieved Inheritance in Java by using the extends keyword. This keyword helps us to extend a class. The syntax of using Inheritance is as follow:
+
+class ChildClass extends ParentClass {
+
+
+
+// BODY OF THE CLASS
+
+
+
+}
+
+Example of Inheritance in Java
+class ParentClass {
+
+
+
+public void printParent() {
+
+System.out.println("This is method of parent class.");
+
+}
+
+}
+
+
+
+
+
+public class ChildClass extends ParentClass{
+
+
+
+public static void main(String args[]){
+
+
+
+// Creating object of child class
+
+ChildClass c = new ChildClass();
+
+
+
+//You can see, there in no method with this name in child class
+
+//We are using this method through inheritance
+
+c.printParent();
+
+}
+
+}
+
+Output:
+
+This is method of parent class.
+Important Points of Inheritance in Java
+Following are the important points that you must have to keep in your mind while using inheritance:
+
+Every class a parent class, by default all class has Object as a parent class.
+
+All members of the class are inherited but constructors are not inherited because they are not a member of the class.
+
+The Constructor of the superclass can be invoked by the child class.
+
+A parent class can have multiple child classes but a child does not have multiple parent class in Java.
+
+A child class does not inherit private data members of its parent class. 
+
+Types of Inheritance in Java:
+There are different types of inheritance in Java that we can use that are as below:
+
+Single Inheritance
+
+Multi-level Inheritance
+
+Hierarchical Inheritance
+
+Multiple Inheritance (Not supported by Java)
+
+Hybrid Inheritance (Not supported by Java )
+
+Single Inheritance
+This is the most simple type of inheritance. In this, we have only one parent class and only one child, class. One class extends only one class.
+
+ Single Inheritance Single Inheritance
+class Parent {
+
+public void printParent() {
+
+System.out.println("This is parent class.");
+
+}
+
+}
+
+
+
+class Child extends Parent {
+
+public void printChild() {
+
+System.out.println("This is child class.");
+
+}
+
+}
+
+
+
+
+
+public class Example {
+
+public static void main(String[] args) {
+
+
+
+Child c = new Child();
+
+c.printParent();
+
+c.printChild();
+
+}
+
+}
+
+Output:
+
+This is parent class.
+This is child class.
+Multi-level Inheritance
+This is a bit advance type of inheritance. In this inheritance, Child class extends a parent class and this child class is also a parent class because it has further child class. This class is known as intermediatory class. 
+
+ Multi-level Inheritance Multi-level Inheritance
+class Vehicle {
+
+public void printParent() {
+
+System.out.println("This is a vehicle. (Parent)");
+
+}
+
+}
+
+
+
+class Car extends Vehicle {
+
+public void printIntermediatory() {
+
+System.out.println("This is car. (Intermediatory)");
+
+}
+
+}
+
+
+
+class SportsCar extends Car {
+
+public void printChild() {
+
+System.out.println("This is a sports car. (Child)");
+
+}
+
+}
+
+
+
+
+
+public class Example {
+
+public static void main(String[] args) {
+
+
+
+SportsCar s = new SportsCar();
+
+s.printParent();
+
+s.printIntermediatory();
+
+s.printChild();
+
+}
+
+}
+
+Output:
+
+This is a vehicle. (Parent)
+This is car. (Intermediatory)
+This is a sports car. (Child)
+Hierarchical Inheritance
+This is the third type of inheritance in which a single parent class has multiple child classes. More than one class can extend the parent class at the same time.
+
+Hierarchical Inheritance  
+Hierarchical Inheritance
+class Car {
+
+public void printParent() {
+
+System.out.println("\n\nThis is car.");
+
+}
+
+}
+
+
+
+class SportsCar extends Car {
+
+public void printChild() {
+
+System.out.println("This is a Sports Car");
+
+}
+
+}
+
+
+
+class RacingCar extends Car {
+
+public void printChild() {
+
+System.out.println("This is a Racing Car");
+
+}
+
+}
+
+
+
+class ClassicCar extends Car {
+
+public void printChild() {
+
+System.out.println("This is a Classic Car");
+
+}
+
+}
+
+
+
+
+
+public class Example {
+
+public static void main(String[] args) {
+
+
+
+SportsCar s = new SportsCar();
+
+s.printParent();
+
+s.printChild();
+
+
+
+RacingCar r = new RacingCar();
+
+r.printParent();
+
+r.printChild();
+
+
+
+ClassicCar c = new ClassicCar();
+
+c.printParent();
+
+c.printChild();
+
+
+
+}
+
+}
+
+Output:
+
+This is car.
+This is a Sports Car
+
+
+This is car.
+This is a Racing Car
+
+
+This is car.
+This is a Classic Car
+Multiple Inheritance
+In this type of inheritance in which a child class has more than one parent class. This type is inheritance is not supported in Java but it can be used in C++ or C. To use this inheritance in Java, we have to use interface. 
+
+Multiple Inheritance
+Multiple Inheritance
+interface Car {
+
+public void printParentFirst();
+
+}
+
+
+
+interface Vehicle {
+
+public void printParentSecond();
+
+}
+
+
+
+
+
+class ClassicCar implements Car, Vehicle {
+
+public void printParentFirst() {
+
+System.out.println("This is a First Parent Class");
+
+}
+
+
+
+public void printParentSecond() {
+
+System.out.println("This is a Second Parent Class");
+
+}
+
+}
+
+
+
+
+
+public class Example {
+
+public static void main(String[] args) {
+
+
+
+ClassicCar c = new ClassicCar();
+
+c.printParentFirst();
+
+c.printParentSecond();
+
+
+
+}
+
+}
+
+Output:
+
+This is a First Parent Class
+This is a Second Parent Class
+Hybrid Inheritance
+This type of inheritance is a mix of two or more inheritance that we have discussed above. For example, a Mixture of Single a Hierarchical Inheritance. This inheritance is also not supported in Java and we have used it in Java with the help of the interface. 
+
+Hybrid Inheritance
+Hybrid Inheritance
+interface Vehicle {
+
+public void printParent();
+
+}
+
+
+
+interface Car extends Vehicle {
+
+public void printParentFirst();
+
+}
+
+
+
+interface Truck extends Vehicle {
+
+public void printParentSecond();
+
+}
+
+
+
+
+
+class ClassicCar implements Car, Vehicle {
+
+
+
+public void printParent() {
+
+System.out.println("This is Parent Class");
+
+}
+
+
+
+public void printParentFirst() {
+
+System.out.println("This is a First Parent Class");
+
+}
+
+
+
+public void printParentSecond() {
+
+System.out.println("This is a Second Parent Class");
+
+}
+
+}
+
+
+
+
+
+public class Example {
+
+public static void main(String[] args) {
+
+
+
+ClassicCar c = new ClassicCar();
+
+c.printParent();
+
+c.printParentFirst();
+
+c.printParentSecond();
+
+
+
+}
+
+}
+
+Output:
+
+This is Parent Class
+This is a First Parent Class
+This is a Second Parent Class
+Advantages of using Inheritance
+Following are some advantages that we get are using it:
+
+We don’t have to write a single piece of code again and again. We can simply extend a class and can use it’s all features or members.
+
+By the way, we can declare new data members and methods in child class according to our requirements.
+
+We can also override a method of the parent class which is known as dynamic polymorphism.
+
+We can use the methods of the parent class as they are defined in the parent class.
+
+Inheritance in Constructors
+Now, whenever you create a child class and create a constructor in that. Then by default, Java automatically calls the constructor of its parent class. We have also explicitly write super() in the constructor of the child class to invoke parent class constructor.
+
+Refer to the below example to have a better understanding:
+
+class ParentClass {
+
+
+
+ParentClass() {
+
+System.out.println("This is parent class Constructor.");
+
+}
+
+}
+
+
+
+class ChildClass extends ParentClass {
+
+ChildClass() {
+
+
+
+// By default super() is written here by Java
+
+// If we write super() here, then we will get same output
+
+System.out.println("This is child class Constructor.");
+
+}
+
+}
+
+
+
+public class Example {
+
+
+
+public static void main(String args[]){
+
+
+
+//Creating object of child class
+
+ChildClass c = new ChildClass();
+
+}
+
+}
+
+Output:
+
+This is parent class Constructor.
+This is child class Constructor.
+Conclusion
+So that’s it for this article. If I just conclude this article then Inheritance is just a process in which class gets features of another class. We then can use those features easily. We don’t have to write a single piece of code again and again.
+
+Also, we have also discussed the type of inheritance with examples. I hope that you understand them easily. Believe me or not this is a very important topic in Object Oriented Programming. Questions about inheritance are must ask in the technical interviews. So, learn this concept by your heart.
